@@ -1,5 +1,7 @@
 # Security policy
 
-Do not place credentials, customer data, call media, transcripts, personal identifiers, or private prompts in this repository or its issues. Report a suspected vulnerability privately to the repository owner with a minimal reproducible description. Do not include sensitive values in the report.
+Use only synthetic dialogue fixtures or material with explicit consent and a documented legal basis. Never commit credentials, customer identifiers, call media, transcripts, private prompts, internal policies, or employer material.
 
-This sample does not provide authentication, retention controls, or a production compliance guarantee. Review privacy, security, and legal requirements before any real-world use.
+The shipped FastAPI service is a local demonstration and has no authentication or production data controls. Bind it to a trusted local interface for demos, place authentication and authorization in front of any real deployment, and review retention, access logging, redaction, and incident handling before processing real content.
+
+Report a suspected vulnerability privately to the repository owner. Include a minimal reproduction without copying sensitive values.

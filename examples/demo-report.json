@@ -1,0 +1,218 @@
+{
+  "schema_version": "contact-center-eval.v2",
+  "report_id": "synthetic-284c336b91ba",
+  "mode": "deterministic-local",
+  "task_packs": {
+    "call_summary_and_resolution": {
+      "status": "complete",
+      "reason": "A deterministic summary uses the first customer issue and generic agent action signals.",
+      "evidence": [
+        {
+          "turn_index": 1,
+          "role": "customer",
+          "excerpt": "My order is delayed and I am frustrated.",
+          "signals": []
+        },
+        {
+          "turn_index": 2,
+          "role": "agent",
+          "excerpt": "I am sorry. I will check the public tracking example and arrange a follow-up.",
+          "signals": [
+            "arrange",
+            "check"
+          ]
+        },
+        {
+          "turn_index": 4,
+          "role": "agent",
+          "excerpt": "The request is resolved for this demo. I will send a summary.",
+          "signals": [
+            "resolved",
+            "summary"
+          ]
+        }
+      ],
+      "result": {
+        "summary": "My order is delayed and I am frustrated.",
+        "resolution": "supported",
+        "resolution_detected": true
+      }
+    },
+    "nps_root_cause_analysis": {
+      "status": "complete",
+      "reason": "This is a deterministic signal summary, not an NPS survey score or prediction.",
+      "evidence": [
+        {
+          "turn_index": 1,
+          "role": "customer",
+          "excerpt": "My order is delayed and I am frustrated.",
+          "signals": [
+            "delayed",
+            "frustrated"
+          ]
+        },
+        {
+          "turn_index": 3,
+          "role": "customer",
+          "excerpt": "Please do not transfer me again.",
+          "signals": [
+            "again"
+          ]
+        }
+      ],
+      "result": {
+        "sentiment_proxy": "negative",
+        "root_cause_signals": [
+          "again",
+          "delayed",
+          "frustrated"
+        ],
+        "score": null
+      }
+    },
+    "representative_actions_and_training_needs": {
+      "status": "complete",
+      "reason": "Actions are extracted only from generic public-safe phrase matches.",
+      "evidence": [
+        {
+          "turn_index": 2,
+          "role": "agent",
+          "excerpt": "I am sorry. I will check the public tracking example and arrange a follow-up.",
+          "signals": [
+            "check",
+            "arrange"
+          ]
+        },
+        {
+          "turn_index": 4,
+          "role": "agent",
+          "excerpt": "The request is resolved for this demo. I will send a summary.",
+          "signals": [
+            "send"
+          ]
+        }
+      ],
+      "result": {
+        "observed_actions": [
+          "arrange",
+          "check",
+          "send"
+        ],
+        "training_needs": []
+      }
+    },
+    "team_leader_coaching_analysis": {
+      "status": "complete",
+      "reason": "Coaching is a generic review cue, not a personnel rating or employment decision.",
+      "evidence": [
+        {
+          "turn_index": 1,
+          "role": "customer",
+          "excerpt": "My order is delayed and I am frustrated.",
+          "signals": [
+            "delayed",
+            "frustrated"
+          ]
+        },
+        {
+          "turn_index": 3,
+          "role": "customer",
+          "excerpt": "Please do not transfer me again.",
+          "signals": [
+            "again"
+          ]
+        },
+        {
+          "turn_index": 2,
+          "role": "agent",
+          "excerpt": "I am sorry. I will check the public tracking example and arrange a follow-up.",
+          "signals": [
+            "check",
+            "arrange"
+          ]
+        },
+        {
+          "turn_index": 4,
+          "role": "agent",
+          "excerpt": "The request is resolved for this demo. I will send a summary.",
+          "signals": [
+            "send"
+          ]
+        }
+      ],
+      "result": {
+        "coaching_observations": [
+          "Review whether the stated next step is completed in a later turn."
+        ],
+        "human_review_required": true
+      }
+    },
+    "prohibited_phrase_detection": {
+      "status": "complete",
+      "reason": "The small phrase list is illustrative and is not a customer or employer policy taxonomy.",
+      "evidence": [],
+      "result": {
+        "matches": [],
+        "review_required": false
+      }
+    },
+    "factuality_and_scenario_compliance": {
+      "status": "complete",
+      "reason": "The fixture has no external source-of-truth, so factuality is never asserted as verified.",
+      "evidence": [],
+      "result": {
+        "unsupported_certainty_terms": [],
+        "scenario_compliance": "no_generic_rule_match",
+        "factuality_status": "insufficient_source_context"
+      }
+    },
+    "profanity_vs_insult_classification": {
+      "status": "complete",
+      "reason": "Generic lexical labels require human review and are not a moderation decision.",
+      "evidence": [],
+      "result": {
+        "profanity_terms": [],
+        "insult_terms": [],
+        "classification": "none"
+      }
+    },
+    "transfer_and_outcome_detection": {
+      "status": "complete",
+      "reason": "The result records wording signals only; it does not verify an operational outcome.",
+      "evidence": [
+        {
+          "turn_index": 3,
+          "role": "customer",
+          "excerpt": "Please do not transfer me again.",
+          "signals": [
+            "transfer"
+          ]
+        },
+        {
+          "turn_index": 2,
+          "role": "agent",
+          "excerpt": "I am sorry. I will check the public tracking example and arrange a follow-up.",
+          "signals": [
+            "arrange",
+            "check"
+          ]
+        },
+        {
+          "turn_index": 4,
+          "role": "agent",
+          "excerpt": "The request is resolved for this demo. I will send a summary.",
+          "signals": [
+            "resolved",
+            "summary"
+          ]
+        }
+      ],
+      "result": {
+        "transfer_detected": true,
+        "outcome_detected": "resolution_signal"
+      }
+    }
+  },
+  "structured_output_valid": true,
+  "disclaimer": "Synthetic deterministic demonstration; not a customer, employee, legal, quality, or compliance decision."
+}

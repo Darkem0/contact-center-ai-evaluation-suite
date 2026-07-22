@@ -5,12 +5,20 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "contact-center-ai-evaluation-suite"
 version = "0.1.0"
-description = "Clean-room deterministic contact-center evaluation examples"
+description = "Deterministic synthetic-dialogue evaluator with typed task packs and a local API"
 requires-python = ">=3.10"
 license = {text = "MIT"}
+dependencies = [
+  "fastapi>=0.110,<1.0",
+  "pydantic>=2.6,<3.0",
+  "uvicorn>=0.27,<1.0",
+]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0"]
+dev = ["pytest>=7.0", "httpx>=0.27"]
+
+[project.scripts]
+contact-eval = "contact_center_eval.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
