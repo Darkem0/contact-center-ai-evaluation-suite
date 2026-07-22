@@ -1,0 +1,6 @@
+[
+  {"role": "customer", "text": "My order is delayed and I am frustrated."},
+  {"role": "agent", "text": "I am sorry. I will check the public tracking example and arrange a follow-up."},
+  {"role": "customer", "text": "Please do not transfer me again."},
+  {"role": "agent", "text": "The request is resolved for this demo. I will send a summary."}
+]
