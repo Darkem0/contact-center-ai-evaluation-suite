@@ -15,4 +15,5 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
       - run: pytest -q
-      - run: python -m contact_center_eval.demo
+      - run: python -m contact_center_eval.cli demo --output /tmp/contact-eval-report.json
+      - run: python -m compileall -q src
