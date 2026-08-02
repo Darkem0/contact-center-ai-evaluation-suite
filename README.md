@@ -1,5 +1,7 @@
 # Contact Center AI Evaluation Suite
 
+> Canonical Turkish Whisper research archive, final manuscripts, metrics, and the commit-pinned public component workspace: **[whisper-turkish-domain-adaptation](https://github.com/Darkem0/whisper-turkish-domain-adaptation)**. This repository remains the independently runnable downstream dialogue-evaluation component.
+
 Evaluate a **synthetic** support dialogue through eight typed, deterministic task packs, then return an evidence-linked JSON report through a CLI or local FastAPI endpoint.
 
 It demonstrates how a product can separate observed wording, unsupported claims, and insufficient evidence instead of producing an opaque score. The default path is useful for testing structured-output contracts before a separately governed local model is introduced.
